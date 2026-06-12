@@ -36,6 +36,11 @@ Support-raising and partnership site for Josh Montague, Training Strategist at T
 
 ## Deploy
 
-1. Create a GitHub repo and push (Chris's account)
-2. Cloudflare Pages → create project from repo, build command `npm run build`, output `dist/`
-3. Add custom domain sendjosh.org (already on the Cloudflare account)
+Live at **https://sendjosh.pages.dev** — Cloudflare Pages project `sendjosh`, GitHub repo `coswald75/sendjosh-site` (private). The Pages project uses direct upload (not git-connected), so after changes:
+
+```
+npm run build
+npx wrangler pages deploy dist --project-name sendjosh --branch main
+```
+
+Before launch: add custom domain sendjosh.org to the Pages project (domain already on Chris's Cloudflare account).
