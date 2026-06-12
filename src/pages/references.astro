@@ -4,7 +4,6 @@ import Base from '../layouts/Base.astro';
 // TODO: confirm titles/churches for Scott C., Mark P., Nate T. and gather short
 // endorsement quotes from each before launch. Do not publish full names without permission.
 const references = [
-  { name: 'Chris Oswald', role: 'Pastor, Providence Community Church (Lenexa, KS)' },
   { name: 'Scott C.', role: 'Sovereign Grace Churches' },
   { name: 'Mark P.', role: 'Sovereign Grace Churches' },
   { name: 'Nate T.', role: 'Sovereign Grace Churches' },
@@ -28,6 +27,10 @@ const references = [
       <div class="photo" style="margin-bottom:44px;">
         <img src="/images/josh-references-group.jpg" alt="Josh with pastors and ministry partners" loading="lazy" style="aspect-ratio:21/9; object-fit:cover;" />
       </div>
+      <blockquote style="max-width:72ch; margin:0 0 16px;">
+        &ldquo;In nearly thirty years of pastoral ministry, I have worked with many men who were eager to go to hard places with the gospel of Jesus Christ. Josh is unique in that he is not only willing but also exceedingly able to do a very strategic work, namely equipping pastors in both life and doctrine for a lifetime of laboring in the harvest. Josh is exceptionally gifted in his particular ministry, and I wholeheartedly commend partnering with him to equip Christian leaders around the world.&rdquo;
+      </blockquote>
+      <p style="margin:0 0 44px;"><strong>Chris Oswald</strong><br /><span class="label" style="color:var(--muted);">Pastor, Providence Community Church (Lenexa, KS)</span></p>
       <div class="grid-2" style="align-items:start; gap:36px;">
         {references.map((r) => (
           <div class="card">
