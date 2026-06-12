@@ -91,9 +91,18 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-dark:hover { background: var(--cocoa); color: var(--cream); }
 
 /* Photo tile with caption block */
-.tile { display: block; text-decoration: none; }
+.tile { display: flex; flex-direction: column; height: 100%; text-decoration: none; }
 .tile img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
-.tile-caption { padding: 22px 18px 24px; text-align: center; }
+.tile-caption {
+  flex: 1;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px 24px;
+  text-align: center;
+}
 .tile-caption.dark { background: var(--ink); }
 .tile-caption.accent { background: var(--coral); }
 .tile-caption h3 {
