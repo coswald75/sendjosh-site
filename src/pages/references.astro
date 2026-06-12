@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+
+// TODO: confirm titles/churches for Scott C., Mark P., Nate T. and gather short
+// endorsement quotes from each before launch. Do not publish full names without permission.
+const references = [
+  { name: 'Chris Oswald', role: 'Pastor, Providence Community Church (Lenexa, KS)' },
+  { name: 'Scott C.', role: 'Sovereign Grace Churches' },
+  { name: 'Mark P.', role: 'Sovereign Grace Churches' },
+  { name: 'Nate T.', role: 'Sovereign Grace Churches' },
+];
+---
+<Base
+  title="References | Send Josh — Josh Montague, Training Leaders International"
+  description="Pastors and leaders who know Josh Montague and his training ministry, and are glad to speak to it."
+  path="/references/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">References</p>
+      <h1>Pastors who know the work.</h1>
+      <p style="font-size:1.15rem;">Mission partnership runs on trust. These pastors know Josh, have seen the training firsthand or sent people into it, and are glad to take your call.</p>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <div class="grid-2" style="align-items:start; gap:36px;">
+        {references.map((r) => (
+          <div class="card">
+            <div class="card-body">
+              <h3 style="margin-bottom:4px;">{r.name}</h3>
+              <p class="label" style="margin-bottom:0; color:var(--muted);">{r.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:36px; max-width:62ch;">Contact details for each reference are available on request &mdash; <a href="mailto:josh.montague@trainingleaders.org">email Josh</a> and he'll make the introduction.</p>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap" style="text-align:center; max-width:760px;">
+      <h2 class="caps-head">Due diligence welcome</h2>
+      <p style="font-size:1.05rem;">If your missions team is weighing a partnership, Josh would rather you ask hard questions now than later. References, budget details, and TLI's own leadership are all open to you.</p>
+      <a class="btn-dark" href="/contact/" style="margin-top:16px;">Start the conversation</a>
+    </div>
+  </section>
+</Base>

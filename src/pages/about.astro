@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+
+const formalCourses = [
+  { place: 'Novi Sad, Serbia', school: 'Baptist Theological School', courses: ['Evangelism and Discipleship', 'Church Planting'] },
+  { place: 'Lomé, Togo', school: 'West Africa Baptist Advanced School of Theology', courses: ['New Testament Interpretation', 'Ezekiel and Old Testament Prophecy'] },
+  { place: 'Buloba, Uganda', school: 'Africa Renewal University', courses: ['Basics of Biblical Interpretation'] },
+  { place: 'Tarime, Tanzania', school: 'East Africa Christian College', courses: ['Biblical Leadership'] },
+];
+
+const nonFormalCourses = [
+  { course: 'Knowing God, Scripture, and Ourselves', places: 'Dominican Republic, El Salvador, Moldova, Nepal, Philippines, UAE, Uganda' },
+  { course: "Knowing the Bible's Story", places: 'Philippines, Romania, UAE' },
+  { course: 'Understanding and Communicating OT Narrative and Law (Genesis & Exodus)', places: 'Bhutan, Ethiopia, Jordan, Mongolia, Philippines' },
+  { course: 'Understanding and Communicating Gospels (Mark)', places: 'Jordan, Greece, Philippines, South Africa, Uganda' },
+  { course: 'Understanding and Communicating OT Poetry (Psalms & Proverbs)', places: 'Jordan, Philippines' },
+  { course: 'Understanding and Communicating NT Letters (Ephesians)', places: 'Philippines' },
+  { course: 'Understanding and Communicating OT Prophecy (Isaiah)', places: 'Jordan, Philippines, Uganda' },
+  { course: 'Understanding and Communicating Apocalyptic Literature (Revelation)', places: 'Jordan' },
+  { course: 'Doing the Ministry of the Word (2 Timothy)', places: 'Greece' },
+];
+---
+<Base
+  title="About Josh | Send Josh — Josh Montague, Training Leaders International"
+  description="Josh Montague pastored for fifteen years before joining Training Leaders International in 2014 to train global church pastors without access to theological education."
+  path="/about/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">About Josh</p>
+      <h1>A pastor who trains pastors.</h1>
+      <p style="font-size:1.15rem;">Dr. Joshua Montague &middot; Training Strategist, Training Leaders International &middot; Teaching Elder, Cross of Grace Church (Chaska, MN)</p>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap grid-2">
+      <div class="photo">
+        <img src="/images/josh-headshot.jpg" alt="Josh Montague" loading="lazy" />
+      </div>
+      <div>
+        <p class="eyebrow">His story</p>
+        <p>After pastoring for fifteen years in Michigan and Wisconsin, Josh began serving as a US-based missionary with Training Leaders International in 2014, training global church pastors without access to theological education. Josh travels regularly overseas to teach and train pastors to understand and communicate Scripture while serving as a teaching elder in his local church.</p>
+        <p>Josh and his wife, Mary Ann, live in Carver, MN and have two sons and two daughters. If you can't find Josh at home or overseas, he's likely paddling a canoe in the Boundary Waters of northern Minnesota.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">Education</p>
+      <h2>Trained for the work.</h2>
+      <div class="grid-3" style="margin-top:36px;">
+        <div>
+          <h3 style="font-size:1.15rem;">B.A. Political Science</h3>
+          <p style="font-size:0.95rem;">Michigan State University, 1997</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.15rem;">M.Div.</h3>
+          <p style="font-size:0.95rem;">Multnomah Biblical Seminary, 2000</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.15rem;">Doctor of Intercultural Studies</h3>
+          <p style="font-size:0.95rem;">Western Seminary, 2024. Dissertation: <em>Training Expository Preachers Among Oral Learners</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Formal teaching</p>
+        <h2>Seminary &amp; college courses.</h2>
+        <div style="margin-top:24px;">
+          {formalCourses.map((f) => (
+            <div style="margin-bottom:22px;">
+              <h3 style="font-size:1.1rem; margin-bottom:4px;">{f.place}</h3>
+              <p class="label" style="margin-bottom:6px;">{f.school}</p>
+              <p style="font-size:0.95rem; margin:0;">{f.courses.join(' · ')}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="photo">
+        <img src="/images/josh-classroom-training.jpg" alt="Josh teaching a pastoral training course" loading="lazy" style="aspect-ratio:3/4; object-fit:cover;" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">Non-formal training</p>
+      <h2>Courses taught around the world.</h2>
+      <p style="max-width:62ch;">Through TLI's non-formal training, Josh has walked pastors through the whole sweep of Scripture &mdash; genre by genre, book by book &mdash; across Asia, Africa, Europe, the Middle East, and the Americas.</p>
+      <ul class="ruled" style="margin-top:28px; max-width:820px;">
+        {nonFormalCourses.map((c) => (
+          <li>
+            <div style="padding:14px 2px;">
+              <p style="font-family:var(--serif); font-size:1.05rem; margin:0 0 2px;">{c.course}</p>
+              <p class="label" style="margin:0; color:var(--muted);">{c.places}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">Next steps</p>
+      <h2>Get to know the work.</h2>
+      <div class="grid-3" style="margin-top:36px;">
+        <div>
+          <h3>The Philippines vision</h3>
+          <p style="font-size:0.95rem;">Sixteen pastors, nine trips, three years. See what's next.</p>
+          <a class="arrow-link" href="/philippines/">The Philippines</a>
+        </div>
+        <div>
+          <h3>Partner with Josh</h3>
+          <p style="font-size:0.95rem;">Josh raises his own support. Learn what the work requires.</p>
+          <a class="arrow-link" href="/support/">The need</a>
+        </div>
+        <div>
+          <h3>Host a seminar</h3>
+          <p style="font-size:0.95rem;">Bring the same training to your own congregation.</p>
+          <a class="arrow-link" href="/seminars/">Seminars for churches</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

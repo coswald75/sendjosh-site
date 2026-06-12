@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+
+const seminars = [
+  { name: 'Knowing God through His Word', sub: 'Introduction to Hermeneutics and Theology' },
+  { name: "Knowing the Bible's Story", sub: 'Biblical Theology and OT/NT Survey' },
+  { name: 'Understanding OT Narrative I', sub: 'Genesis & Exodus' },
+  { name: 'Understanding OT Narrative II', sub: '1–2 Samuel' },
+  { name: 'Understanding OT Law', sub: 'Exodus & Leviticus' },
+  { name: 'Understanding OT Poetry', sub: 'Psalms' },
+  { name: 'Understanding OT Wisdom Literature', sub: 'Proverbs' },
+  { name: 'Understanding OT Prophecy', sub: 'Isaiah' },
+  { name: 'Understanding the Gospels', sub: 'Mark' },
+  { name: 'Understanding NT Letters', sub: 'Ephesians' },
+  { name: 'Understanding Apocalyptic Literature', sub: 'Revelation' },
+];
+---
+<Base
+  title="Seminars for Churches | Send Josh — Josh Montague, Training Leaders International"
+  description="Josh Montague offers Bible seminars for US churches — the same training he brings to global pastors, taught in your congregation."
+  path="/seminars/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Seminars</p>
+      <h1>The same training, in your church.</h1>
+      <p style="font-size:1.15rem;">The courses Josh teaches to pastors overseas make outstanding weekend seminars for US congregations &mdash; and hosting one is a natural first step into mission partnership.</p>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap grid-2">
+      <div class="photo">
+        <img src="/images/josh-training-psalms.jpg" alt="Josh teaching the Psalms" loading="lazy" />
+      </div>
+      <div>
+        <p class="eyebrow">Why host a seminar</p>
+        <p>Every seminar teaches your people to read, understand, and apply a portion of Scripture on its own terms &mdash; the same hermeneutical training TLI brings to global pastors. Your congregation grows in handling the word, and meets the work of global pastoral training firsthand.</p>
+        <p>Seminars work well as a weekend conference, a Saturday intensive, a Sunday school series, or a retreat. Josh also speaks on sermons, missions, and biblical theology, and is glad to preach on a Sunday morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">Seminar options</p>
+      <h2>Eleven seminars, one Bible.</h2>
+      <ul class="ruled" style="margin-top:28px; max-width:820px;">
+        {seminars.map((s) => (
+          <li>
+            <div style="padding:14px 2px;">
+              <p style="font-family:var(--serif); font-size:1.05rem; margin:0 0 2px;">{s.name}</p>
+              <p class="label" style="margin:0; color:var(--muted);">{s.sub}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <p class="eyebrow">Formats</p>
+      <h2>Fit the teaching to your church.</h2>
+      <div class="grid-3" style="margin-top:36px;">
+        <div>
+          <h3>Weekend seminar</h3>
+          <p style="font-size:0.95rem;">Friday evening and Saturday morning sessions, with optional Sunday preaching. The most popular format.</p>
+        </div>
+        <div>
+          <h3>Saturday intensive</h3>
+          <p style="font-size:0.95rem;">A single-day workshop through one book or genre of Scripture &mdash; ideal for leadership teams and Bible study leaders.</p>
+        </div>
+        <div>
+          <h3>Custom sessions</h3>
+          <p style="font-size:0.95rem;">Keynotes, missions weekends, panel discussions, or virtual presentations &mdash; shaped around your church's calendar and needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap" style="text-align:center; max-width:760px;">
+      <h2 class="caps-head">Book a seminar</h2>
+      <p style="font-size:1.05rem;">Email Josh with your church, your preferred dates, and the seminar you have in mind. He'll follow up to plan the details.</p>
+      <a class="btn-dark" href="mailto:josh.montague@trainingleaders.org" style="margin-top:16px;">Email Josh</a>
+    </div>
+  </section>
+</Base>

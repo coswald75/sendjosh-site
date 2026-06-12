@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+
+const tiles = [
+  { name: 'Meet Josh', sub: 'Fifteen years a pastor, ten years a trainer', img: '/images/josh-headshot.jpg', href: '/about/', tone: 'dark' },
+  { name: 'The Philippines', sub: 'Sixteen pastors, nine trips, three years', img: '/images/josh-preaching-philippines.jpg', href: '/philippines/', tone: 'accent' },
+  { name: 'The Need', sub: 'Josh raises his own support', img: '/images/josh-classroom-training.jpg', href: '/support/', tone: 'dark' },
+  { name: 'Seminars for Churches', sub: 'Bring the training home to your congregation', img: '/images/josh-training-psalms.jpg', href: '/seminars/', tone: 'accent' },
+  { name: 'References', sub: 'Pastors who know Josh and his work', img: '/images/josh-preaching-philippines.jpg', href: '/references/', tone: 'dark' },
+  { name: 'Contact', sub: 'Start a conversation', img: '/images/josh-headshot.jpg', href: '/contact/', tone: 'accent' },
+];
+---
+<Base
+  title="Send Josh | Josh Montague — Training Leaders International"
+  description="Partner with Josh Montague, a US-based missionary with Training Leaders International, training pastors around the world who lack access to theological education."
+  path="/"
+>
+  <section class="section" style="padding-bottom:44px;">
+    <div class="wrap" style="text-align:center;">
+      <p class="label" style="margin-bottom:20px;">Josh Montague &middot; Training Leaders International</p>
+      <h1 style="font-size:clamp(2.13rem, 4.7vw, 3.25rem); line-height:1.3; margin:0 auto;">The greatest need of the<br />global church is<br />trained pastors.</h1>
+    </div>
+  </section>
+
+  <section style="padding-bottom:88px;">
+    <div class="wrap">
+      <div class="block-cta">
+        <p class="caps-head">A mission partnership</p>
+        <div class="block-cta-inner">
+          <p class="line1">Pray &bull; Give &bull; Send</p>
+          <p style="margin:0; font-size:1.02rem;"><a href="/support/">See the need</a> &nbsp;&middot;&nbsp; <a href="/philippines/">The Philippines vision</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:72px;">
+    <div class="wrap grid-3">
+      {tiles.map((t) => (
+        <a href={t.href} class="tile">
+          <img src={t.img} alt={t.name} loading="lazy" />
+          <div class={`tile-caption ${t.tone}`}>
+            <h3>{t.name}</h3>
+            <div class="rule"></div>
+            <p>{t.sub}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-panel">
+    <div class="wrap" style="text-align:center; max-width:840px;">
+      <h2 class="caps-head">The work</h2>
+      <p style="font-size:1.15rem; max-width:62ch; margin:0 auto 40px;">Around the world, churches are growing faster than pastors can be trained. Most of the men shepherding those churches will never have access to a seminary. Josh goes to them.</p>
+      <div class="grid-3" style="text-align:center; gap:36px;">
+        <div>
+          <h3 class="caps-head" style="font-size:1.05rem;">Train</h3>
+          <p style="font-size:0.98rem;">Josh travels overseas several times a year to teach pastors to understand and communicate the Scriptures &mdash; book by book, from Genesis to Revelation &mdash; men who would otherwise have no formal theological education at all.</p>
+        </div>
+        <div>
+          <h3 class="caps-head" style="font-size:1.05rem;">Multiply</h3>
+          <p style="font-size:0.98rem;">Every pastor Josh trains is urged to pass the training on to others. The goal is not a dependency but a multiplication: trained men training men, long after the trips end.</p>
+        </div>
+        <div>
+          <h3 class="caps-head" style="font-size:1.05rem;">Send</h3>
+          <p style="font-size:0.98rem;">Josh raises his own support and serves through the partnership of local churches &mdash; congregations that pray for the work, give toward it, and send their own people into it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid-2">
+      <div class="photo">
+        <img src="/images/josh-headshot.jpg" alt="Josh Montague" loading="lazy" style="aspect-ratio:4/5; object-fit:cover;" />
+      </div>
+      <div>
+        <h2 class="caps-head">Meet Josh</h2>
+        <p>After pastoring for fifteen years in Michigan and Wisconsin, Josh began serving as a US-based missionary with Training Leaders International in 2014. He serves as a teaching elder at Cross of Grace Church in Chaska, Minnesota, and travels regularly overseas to train global church pastors. Josh and his wife, Mary Ann, live in Carver, MN with their two sons and two daughters.</p>
+        <a class="btn" href="/about/">Read Josh's story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap" style="text-align:center; max-width:760px;">
+      <h2 class="caps-head">For Sovereign Grace churches</h2>
+      <p style="font-size:1.05rem;">Mission partnership is one of the great privileges of the local church: a congregation praying for, providing for, and sharing in work it could never do alone. Josh is asking Sovereign Grace churches to consider that kind of partnership &mdash; beginning with a new three-year training effort in the Philippines. Please pray for wisdom, and for the provision of funds and teachers.</p>
+      <a class="btn-dark" href="/support/" style="margin-top:16px;">How your church can partner</a>
+    </div>
+  </section>
+</Base>

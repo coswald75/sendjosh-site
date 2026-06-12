@@ -1,0 +1,126 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+const canonical = `https://sendjosh.org${path}`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://sendjosh.org/images/josh-headshot.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="band">
+    <div class="wrap band-inner">
+      <nav aria-label="Main">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About Josh</a></li>
+          <li><a href="/philippines/">The Philippines</a></li>
+          <li><a href="/support/">The Need</a></li>
+          <li><a href="/seminars/">Seminars</a></li>
+          <li><a href="/references/">References</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <section class="section" style="padding-bottom:96px;">
+    <div class="wrap">
+      <div class="block-cta">
+        <p class="caps-head">Partner with Josh</p>
+        <div class="block-cta-inner">
+          <p class="line1">Pray &bull; Give &bull; Send</p>
+          <p style="margin:0; font-size:1.02rem;"><a href="/support/">See the need</a> &nbsp;&middot;&nbsp; <a href="https://trainingleadersinternational.org/give?tbl=staff">Give through TLI</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--ink); color:var(--cream); padding:64px 0 40px;">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="caps-head" style="color:var(--cream); font-size:1.15rem; margin-bottom:18px;">Send Josh</p>
+        <p style="font-size:0.98rem; max-width:46ch; color:rgba(250,248,243,0.85);">Josh Montague serves as a US-based missionary with Training Leaders International, training pastors around the world who lack access to theological education. He raises his own support, and serves through the prayers, partnership, and generosity of local churches.</p>
+      </div>
+      <div>
+        <p class="sidebar-head" style="color:rgba(250,248,243,0.7);">Quick links</p>
+        <ul style="list-style:none; padding:0; margin:0; font-size:0.98rem; line-height:2.1;">
+          <li><a href="/about/" style="color:var(--cream); text-decoration:none;">About Josh</a></li>
+          <li><a href="/philippines/" style="color:var(--cream); text-decoration:none;">The Philippines</a></li>
+          <li><a href="/support/" style="color:var(--cream); text-decoration:none;">The Need</a></li>
+          <li><a href="/seminars/" style="color:var(--cream); text-decoration:none;">Seminars for Churches</a></li>
+          <li><a href="/references/" style="color:var(--cream); text-decoration:none;">References</a></li>
+          <li><a href="/contact/" style="color:var(--cream); text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sidebar-head" style="color:rgba(250,248,243,0.7);">Contact</p>
+        <p style="font-size:0.98rem;"><a href="mailto:josh.montague@trainingleaders.org" style="color:var(--cream);">josh.montague@trainingleaders.org</a></p>
+        <p style="font-size:0.98rem; color:rgba(250,248,243,0.85);">
+          <a href="https://trainingleadersinternational.org" style="color:var(--cream);">Training Leaders International</a><br />
+          <a href="https://www.crossgrace.org" style="color:var(--cream);">Cross of Grace Church</a>
+        </p>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:40px; border-top:1px solid rgba(250,248,243,0.25); padding-top:20px;">
+      <p style="font-size:0.85rem; margin:0; font-family:var(--sans); color:rgba(250,248,243,0.7);">&copy; {new Date().getFullYear()} Josh Montague &middot; Training Leaders International. All gifts are tax-deductible.</p>
+    </div>
+  </footer>
+
+  <style>
+    .band { background: var(--band); border-bottom: 1px solid var(--line); }
+    .band-inner { display: flex; align-items: center; justify-content: center; padding-top: 18px; padding-bottom: 18px; }
+    .nav-list { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .nav-list a {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-list a:hover { color: var(--coral-dark); }
+    .nav-toggle, .nav-burger { display: none; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    @media (max-width: 900px) {
+      .nav-burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+      .nav-burger span { width: 24px; height: 2px; background: var(--ink); }
+      .nav-list { display: none; position: absolute; right: 24px; top: 66px; background: var(--band); padding: 18px 24px; flex-direction: column; align-items: flex-start; gap: 14px; z-index: 50; }
+      .nav-toggle:checked ~ .nav-list { display: flex; }
+      nav { position: relative; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</body>
+</html>

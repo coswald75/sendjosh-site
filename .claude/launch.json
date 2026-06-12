@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sendjosh",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/dad/shepherds-guild/sendjosh-site",
+      "port": 4321
+    }
+  ]
+}
