@@ -66,24 +66,9 @@ const pendingRefs = [
     </div>
   </section>
 
-  <section class="section section-rule">
-    <div class="wrap">
-      <p class="eyebrow">More references</p>
-      <h2 style="margin-bottom:8px;">Glad to take your call.</h2>
-      <p style="max-width:62ch; margin-bottom:36px;">These pastors know Josh and his work and are happy to speak with you directly.</p>
-      <div class="grid-2" style="align-items:start; gap:36px;">
-        {pendingRefs.map((r) => (
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-bottom:4px;">{r.name}</h3>
-              <p class="label" style="margin-bottom:0; color:var(--muted);">{r.role}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <p style="margin-top:36px; max-width:62ch;">Contact details for each reference are available on request &mdash; <a href="mailto:josh.montague@trainingleaders.org">email Josh</a> and he'll make the introduction.</p>
-    </div>
-  </section>
+  <!-- "More references" card section removed per Chris (2026-06-25). pendingRefs array
+       retained in frontmatter; restore this section when Scott C. / Nate T. / Jeffrey Jo
+       quotes (or a card list) are wanted again. -->
 
   <section class="section section-rule">
     <div class="wrap" style="text-align:center; max-width:760px;">
