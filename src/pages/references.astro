@@ -1,14 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// TODO: confirm titles/churches for Scott C., Mark P., Nate T. and gather short
-// endorsement quotes from each before launch. Do not publish full names without permission.
-const references = [
+// Pastoral recommendations with full quotes (rendered as featured testimonials).
+const testimonials = [
+  {
+    quote: [
+      'In nearly thirty years of pastoral ministry, I have worked with many men who were eager to go to hard places with the gospel of Jesus Christ. Josh is unique in that he is not only willing but also exceedingly able to do a very strategic work, namely equipping pastors in both life and doctrine for a lifetime of laboring in the harvest. Josh is exceptionally gifted in his particular ministry, and I wholeheartedly commend partnering with him to equip Christian leaders around the world.',
+    ],
+    name: 'Chris Oswald',
+    role: 'Pastor, Providence Community Church (Lenexa, KS)',
+  },
+  {
+    quote: [
+      'Josh Montague has a unique desire to equip pastors for life and ministry throughout the world who don’t have access to solid theological training. Josh goes to them, many in hard places, and not only equips pastors in sound doctrine as a competent, experienced teacher, he also invests into their very lives as a caring pastor. That rare combination of equipping the mind and caring for the soul marks Josh’s ministry, which I commend to you for the good of the gospel and the glory of Christ.',
+    ],
+    name: 'Mark Prater',
+    role: 'Pastor, Covenant Fellowship Church · Executive Director, Sovereign Grace Churches',
+  },
+  {
+    quote: [
+      'Josh and his team have given us fresh energy for pastoral training that is meeting the needs of Philippine churches. Pastors are being challenged and equipped to engage Scripture with clarity, conviction, and joy, and we are eager to see this work expand and strengthen more churches across our nation.',
+      'After serving in ministry in the Philippines for nearly four decades, this work fills my heart afresh with gratitude and anticipation. By God’s providence, we have found a faithful partner in Josh and TLI, and we pray this momentum continues through God’s grace, provision, and the partnership of those who long to see pastors equipped, churches strengthened, and Christ proclaimed.',
+    ],
+    name: 'Pastor Leo Ordiales',
+    role: 'Grace from Heaven Christian Fellowship, Pasay, Philippines · Philippine Reformed Association of Churches (PREACh)',
+  },
+];
+
+// References whose endorsement quotes are still pending. TODO: confirm full names /
+// permission for Scott C., Nate T.; add quotes as they arrive.
+const pendingRefs = [
   { name: 'Scott C.', role: 'Sovereign Grace Churches' },
-  { name: 'Mark P.', role: 'Sovereign Grace Churches' },
   { name: 'Nate T.', role: 'Sovereign Grace Churches' },
   { name: 'Jeffrey Jo', role: 'Pastor, Sovereign Grace Churches (Philippines)' },
-  { name: 'Leo Ordiales', role: 'Pastor, Grace from Heaven Christian Fellowship (Pasay, Philippines)' },
 ];
 ---
 <Base
@@ -29,12 +53,26 @@ const references = [
       <div class="photo" style="margin-bottom:44px;">
         <img src="/images/josh-references-group.jpg" alt="Josh with pastors and ministry partners" loading="lazy" style="aspect-ratio:21/9; object-fit:cover;" />
       </div>
-      <blockquote style="max-width:72ch; margin:0 0 16px;">
-        &ldquo;In nearly thirty years of pastoral ministry, I have worked with many men who were eager to go to hard places with the gospel of Jesus Christ. Josh is unique in that he is not only willing but also exceedingly able to do a very strategic work, namely equipping pastors in both life and doctrine for a lifetime of laboring in the harvest. Josh is exceptionally gifted in his particular ministry, and I wholeheartedly commend partnering with him to equip Christian leaders around the world.&rdquo;
-      </blockquote>
-      <p style="margin:0 0 44px;"><strong>Chris Oswald</strong><br /><span class="label" style="color:var(--muted);">Pastor, Providence Community Church (Lenexa, KS)</span></p>
+      {testimonials.map((t, i) => (
+        <div style={`max-width:72ch; ${i < testimonials.length - 1 ? 'margin:0 0 48px; padding-bottom:48px; border-bottom:1px solid var(--line);' : 'margin:0;'}`}>
+          <blockquote style="margin:0 0 16px;">
+            {t.quote.map((p, j) => (
+              <span style={j > 0 ? 'display:block; margin-top:0.9em;' : 'display:block;'}>{j === 0 ? `“${p}` : p}{j === t.quote.length - 1 ? '”' : ''}</span>
+            ))}
+          </blockquote>
+          <p style="margin:0;"><strong>{t.name}</strong><br /><span class="label" style="color:var(--muted);">{t.role}</span></p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">More references</p>
+      <h2 style="margin-bottom:8px;">Glad to take your call.</h2>
+      <p style="max-width:62ch; margin-bottom:36px;">These pastors know Josh and his work and are happy to speak with you directly.</p>
       <div class="grid-2" style="align-items:start; gap:36px;">
-        {references.map((r) => (
+        {pendingRefs.map((r) => (
           <div class="card">
             <div class="card-body">
               <h3 style="margin-bottom:4px;">{r.name}</h3>
