@@ -36,11 +36,13 @@ Support-raising and partnership site for Josh Montague, Training Strategist at T
 
 ## Deploy
 
-Live at **https://sendjosh.pages.dev** — Cloudflare Pages project `sendjosh`, GitHub repo `coswald75/sendjosh-site` (private). The Pages project uses direct upload (not git-connected), so after changes:
+**Live at https://sendjosh.org** (and www.sendjosh.org). Cloudflare Pages project `sendjosh`, GitHub repo `coswald75/sendjosh-site` (private), also reachable at `sendjosh.pages.dev`. The Pages project uses direct upload (not git-connected), so after changes:
 
 ```
 npm run build
 npx wrangler pages deploy dist --project-name sendjosh --branch main
 ```
 
-Before launch: add custom domain sendjosh.org to the Pages project (domain already on Chris's Cloudflare account).
+### Custom domain (done 2026-06-25)
+
+sendjosh.org + www are attached to the Pages project and active. DNS lives in the same Cloudflare account (zone `af3f2e785808a2b2bad28f1c7e59d74f`): two **proxied CNAME** records, `@` and `www`, both → `sendjosh.pages.dev`. The Pages API does NOT auto-create DNS — the records were added manually in the dashboard (the available wrangler/deploy tokens only have `zone:read`/`pages:write`, not DNS edit). If the domain ever needs re-pointing, add/edit those CNAMEs in DNS → Records.
