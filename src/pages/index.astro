@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 
 const tiles = [
   { name: 'Meet Josh', sub: 'Fifteen years a pastor, twelve years a trainer', img: '/images/josh-headshot.jpg', href: '/about/', tone: 'dark' },
@@ -31,6 +32,7 @@ const tiles = [
           <p style="margin:0; font-size:1.02rem;"><a href="/support/">See the need</a> &nbsp;&middot;&nbsp; <a href="/philippines/">The Philippines vision</a> &nbsp;&middot;&nbsp; <a href="https://joshmontague.epistle.org/subscribe">Subscribe to Newsletter</a></p>
         </div>
       </div>
+      <p style="text-align:center; margin:32px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 

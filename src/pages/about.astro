@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 
 const formalCourses = [
   { place: 'Novi Sad, Serbia', school: 'Baptist Theological School', courses: ['Evangelism and Discipleship', 'Church Planting'] },
@@ -30,6 +31,7 @@ const nonFormalCourses = [
       <p class="eyebrow">About Josh</p>
       <h1>A pastor who trains pastors.</h1>
       <p style="font-size:1.15rem;">Dr. Joshua Montague &middot; Training Strategist, Training Leaders International &middot; Teaching Elder, Cross of Grace Church (Chaska, MN)</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 
 // Pastoral recommendations with full quotes (rendered as featured testimonials).
 const testimonials = [
@@ -52,6 +53,7 @@ const pendingRefs = [
       <p class="eyebrow">References</p>
       <h1>Pastors who know the work.</h1>
       <p style="font-size:1.15rem;">Mission partnership runs on trust. These pastors know Josh, have seen the training firsthand or sent people into it, and are glad to take your call.</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 

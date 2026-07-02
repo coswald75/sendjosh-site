@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 ---
 <Base
   title="The Philippines Vision | Send Josh — Josh Montague, Training Leaders International"
@@ -11,6 +12,7 @@ import Base from '../layouts/Base.astro';
       <p class="eyebrow">The vision</p>
       <h1>The Philippines, and beyond.</h1>
       <p style="font-size:1.15rem;">A new partnership is forming in the province of Cavite: sixteen pastors, nine training trips, three years. Further partnerships are being considered on the islands of Cebu, Mindanao, and Mindoro. And the pattern behind it has already been proven.</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 

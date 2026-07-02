@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 ---
 <Base
   title="The Need | Send Josh — Josh Montague, Training Leaders International"
@@ -11,6 +12,7 @@ import Base from '../layouts/Base.astro';
       <p class="eyebrow">The need</p>
       <h1>Josh raises his own support.</h1>
       <p style="font-size:1.15rem;">Like every TLI missionary, Josh's ministry is funded entirely by churches and individuals who believe trained pastors are the greatest need of the global church.</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 
@@ -80,7 +82,7 @@ import Base from '../layouts/Base.astro';
     <div class="wrap" style="text-align:center; max-width:760px;">
       <h2 class="caps-head">Give through TLI</h2>
       <p style="font-size:1.05rem;">All giving is processed by Training Leaders International. Choose &ldquo;Staff&rdquo; and designate your gift for <strong>Josh Montague</strong>.</p>
-      <a class="btn-dark" href="https://trainingleadersinternational.org/give?tbl=staff" style="margin-top:16px;">Give now</a>
+      <a class="btn-dark" href={DONATE_URL} style="margin-top:16px;">Give now</a>
       <p style="font-size:0.9rem; margin-top:20px; color:var(--muted);">All gifts are tax-deductible.<br />TLI is a member of the ECFA.</p>
     </div>
   </section>

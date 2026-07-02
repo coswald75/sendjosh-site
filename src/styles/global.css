@@ -9,6 +9,8 @@
   --coral-dark: #075c2e;
   --band: #ffffff;
   --green: #0a7d3e;
+  --gold: #b8860b;
+  --gold-dark: #96700a;
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
 }
@@ -89,6 +91,23 @@ img { max-width: 100%; height: auto; display: block; }
 .btn:hover { background: var(--coral-dark); color: #fff; }
 .btn-dark { background: var(--ink); color: var(--cream); }
 .btn-dark:hover { background: var(--cocoa); color: var(--cream); }
+
+/* Donation call-to-action — gold, deliberately distinct from the green nav/CTAs */
+.btn-donate {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 48px;
+  text-align: center;
+  background: var(--gold);
+  color: #fff;
+  transition: background 0.15s ease;
+}
+.btn-donate:hover { background: var(--gold-dark); color: #fff; }
 
 /* Photo tile with caption block */
 .tile { display: flex; flex-direction: column; height: 100%; text-decoration: none; }

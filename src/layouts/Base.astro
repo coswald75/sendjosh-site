@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { DONATE_URL } from '../consts.js';
 
 interface Props {
   title: string;
@@ -60,7 +61,7 @@ const canonical = `https://sendjosh.org${path}`;
         <p class="caps-head">Partner with Josh</p>
         <div class="block-cta-inner">
           <p class="line1">Pray &bull; Give &bull; Send</p>
-          <p style="margin:0; font-size:1.02rem;"><a href="/support/">See the need</a> &nbsp;&middot;&nbsp; <a href="https://trainingleadersinternational.org/give?tbl=staff">Give through TLI</a></p>
+          <p style="margin:0; font-size:1.02rem;"><a href="/support/">See the need</a> &nbsp;&middot;&nbsp; <a href={DONATE_URL}>Give through TLI</a></p>
         </div>
       </div>
     </div>

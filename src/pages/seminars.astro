@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 
 const seminars = [
   { name: 'Knowing God through His Word', sub: 'Introduction to Hermeneutics and Theology' },
@@ -25,6 +26,7 @@ const seminars = [
       <p class="eyebrow">Seminars</p>
       <h1>The same training, in your church.</h1>
       <p style="font-size:1.15rem;">The courses Josh teaches to pastors overseas make outstanding weekend seminars for US congregations &mdash; and hosting one is a natural first step into mission partnership.</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DONATE_URL } from '../consts.js';
 ---
 <Base
   title="Contact | Send Josh — Josh Montague, Training Leaders International"
@@ -11,6 +12,7 @@ import Base from '../layouts/Base.astro';
       <p class="eyebrow">Contact</p>
       <h1>Start a conversation.</h1>
       <p style="font-size:1.15rem;">Whether your church is exploring partnership, your missions team has questions, or you'd like to host a seminar &mdash; Josh would love to hear from you.</p>
+      <p style="margin:28px 0 0;"><a class="btn-donate" href={DONATE_URL}>Donate</a></p>
     </div>
   </section>
 
